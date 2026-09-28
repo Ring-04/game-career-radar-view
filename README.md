@@ -1,2 +1,3 @@
 # game-career-radar-view
-Encrypted deployment shell for private career radar
+
+Encrypted static deployment shell. Source data lives in a private repository; this repository only contains the UI shell and AES-GCM encrypted radar payload.

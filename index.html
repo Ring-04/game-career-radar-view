@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="2028届游戏行业求职雷达：Game UX、Technical/System Design、用户研究与相关实习机会。">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Game Career Radar · 2028</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="locked">
+  <div id="authGate" class="auth-gate" aria-live="polite">
+    <form id="authForm" class="auth-card" autocomplete="off">
+      <div class="section-kicker">PRIVATE ACCESS</div>
+      <h1>Game Career Radar</h1>
+      <p>输入访问口令</p>
+      <input id="authCode" type="password" inputmode="numeric" pattern="[0-9]*" maxlength="16" autocomplete="off" aria-label="访问口令" autofocus>
+      <button type="submit">进入雷达</button>
+      <div id="authMessage" class="auth-message"></div>
+    </form>
+  </div>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">CAREER INTELLIGENCE / 2028</p>
+      <h1>游戏行业求职雷达</h1>
+      <p class="subtitle">Game UX · Interaction · System / Technical Design · User Research</p>
+    </div>
+    <div class="sync">
+      <span class="pulse"></span>
+      <div><strong id="syncLabel">读取数据中</strong><small id="lastUpdated">—</small></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-grid" aria-label="概览">
+      <article class="mission">
+        <div class="section-kicker">PRIMARY MISSION</div>
+        <h2 id="missionTitle">把“能投”变成“值得投”</h2>
+        <p id="missionText">雷达将官方验真、职业匹配、作品集就绪、到岗可行与战略价值分开判断。</p>
+        <div id="routeTags" class="tag-row"></div>
+      </article>
+      <div id="stats" class="stats"></div>
+    </section>
+
+    <section class="control-panel">
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="搜索公司、岗位、地点、缺口…" autocomplete="off">
+      </div>
+      <select id="queueFilter" aria-label="行动队列"><option value="">全部队列</option></select>
+      <select id="routeFilter" aria-label="职业路线"><option value="">全部路线</option></select>
+      <select id="companyFilter" aria-label="公司"><option value="">全部公司</option></select>
+      <select id="sortBy" aria-label="排序">
+        <option value="priority">按行动优先级</option>
+        <option value="score">按综合分</option>
+        <option value="confidence">按证据置信</option>
+        <option value="company">按公司</option>
+      </select>
+    </section>
+
+    <section class="workspace">
+      <div class="main-column">
+        <div class="section-head">
+          <div><span class="section-kicker">ACTIVE TARGETS</span><h2>岗位池</h2></div>
+          <div class="result-count"><strong id="resultCount">0</strong> 个结果</div>
+        </div>
+        <div id="jobList" class="job-list" aria-live="polite"></div>
+        <div id="emptyState" class="empty" hidden>没有符合当前筛选条件的岗位。</div>
+      </div>
+
+      <aside class="side-column">
+        <section class="side-card">
+          <div class="section-kicker">ACTION QUEUE</div>
+          <h3>当前行动</h3>
+          <div id="actionQueue"></div>
+        </section>
+        <section class="side-card">
+          <div class="section-kicker">SKILL GAPS</div>
+          <h3>能力缺口</h3>
+          <div id="gapList"></div>
+        </section>
+        <section class="side-card">
+          <div class="section-kicker">CHANGELOG</div>
+          <h3>最近变化</h3>
+          <div id="changeList"></div>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <span>数据仅用于求职决策辅助；官方招聘页优先于第三方信息。</span>
+    <span>ENCRYPTED STATIC VIEW</span>
+  </footer>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
